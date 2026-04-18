@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Assignment 12</title>
+<script>
+function changeHeading() {
+document.getElementById("mainHeading").innerText = "Welcome to DOM Manipulation";
+}
+function visibilty(){
+const p = document.getElementById("togglePara");
+const butn=document.getElementById("btn");
+p.style.display = (p.style.display === "none") ? (btn.innerText = "Hide", "block") : (btn.innerText = "Show","none");
+}
+function colorchange(){
+var a=document.getElementById("x").value;
+if(a=="red")
+document.bgColor="red";
+else if(a=="green")
+document.bgColor="green";
+else if(a=="blue")
+document.bgColor="blue";
+else if(a=="none")
+document.bgColor="white";
+}
+function increase() {
+let counter = document.getElementById("counter");
+counter.value = parseInt(counter.value) + 1;
+}
+function decrease() {
+let counter = document.getElementById("counter");
+let value = parseInt(counter.value);
+if (value > 0) {
+counter.value = value - 1;
+}
+}
+function checkprime(){
+const inputnum = document.getElementById("inputnum");
+const num = parseInt(inputnum.value);
+let c=0;
+for (let i = 1; i <= num; i++) {
+if (num % i === 0) {
+c++;
+}
+}
+if (c === 2) {
+document.write("Your Number is Prime Yayyyyy !!!");
+} else {
+document.write("Your Number is not Prime :)");
+}
+}
+</script>
+</head>
+<body>
+<section>
+<h2 id="mainHeading">Hello World</h2>
+<button onclick="changeHeading()">Change Heading</button>
+</section>
+<section>
+<p id="togglePara">I will never forget the time I learned to ride a bike without training wheels. My father held the back of the seat, encouraging me as I wobbled down the driveway, my heart pounding in my chest. "Don't stop pedaling" he shouted, but I was too panicked to listen. Suddenly, I felt the bike stabilize, and I realized he was no longer holding on. I was flying on my own, balancing perfectly, filled with a rush of triumph.</p>
+<button onclick="visibilty()" id="btn">Hide</button>
+</section>
+<section>
+<h3>Color Changing Background</h3>
+<select id="x" onchange="colorchange()">
+<option value="none">None</option>
+<option value="red">Red</option>
+<option value="green">Green</option>
+<option value="blue">Blue</option>
+</select>
+</section>
+<section name="f">
+<h3>Counter Operation</h3>
+<input type="text" id="counter" value="0" readonly><br><br>
+<button onclick="increase()">+</button>
+<button onclick="decrease()">-</button>
+</section>
+<section>
+<h3>Prime Check</h3>
+<input type="number" id="inputnum" placeholder="Enter any number">
+<button id="forcheck" onclick="checkprime()">Check Prime</button>
+</section>
+</body>
+</html>
